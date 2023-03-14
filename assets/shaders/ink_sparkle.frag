@@ -7,8 +7,53 @@
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 11,
-      "name": "u_circle1",
+      "location": 0,
+      "name": "u_color",
+      "rows": 4,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 1,
+      "name": "u_alpha",
+      "rows": 1,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 2,
+      "name": "u_sparkle_color",
+      "rows": 4,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 3,
+      "name": "u_sparkle_alpha",
+      "rows": 1,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 4,
+      "name": "u_blur",
+      "rows": 1,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 5,
+      "name": "u_center",
       "rows": 2,
       "type": 10
     },
@@ -16,45 +61,18 @@
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 14,
-      "name": "u_rotation1",
-      "rows": 2,
+      "location": 6,
+      "name": "u_radius_scale",
+      "rows": 1,
       "type": 10
     },
     {
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 12,
-      "name": "u_circle2",
-      "rows": 2,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
-      "location": 15,
-      "name": "u_rotation2",
-      "rows": 2,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
-      "location": 13,
-      "name": "u_circle3",
-      "rows": 2,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
-      "location": 16,
-      "name": "u_rotation3",
-      "rows": 2,
+      "location": 7,
+      "name": "u_max_radius",
+      "rows": 1,
       "type": 10
     },
     {
@@ -79,42 +97,6 @@
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 7,
-      "name": "u_max_radius",
-      "rows": 1,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
-      "location": 6,
-      "name": "u_radius_scale",
-      "rows": 1,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
-      "location": 5,
-      "name": "u_center",
-      "rows": 2,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
-      "location": 4,
-      "name": "u_blur",
-      "rows": 1,
-      "type": 10
-    },
-    {
-      "array_elements": 0,
-      "bit_width": 32,
-      "columns": 1,
       "location": 10,
       "name": "u_noise_phase",
       "rows": 1,
@@ -124,36 +106,54 @@
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 3,
-      "name": "u_sparkle_alpha",
-      "rows": 1,
+      "location": 11,
+      "name": "u_circle1",
+      "rows": 2,
       "type": 10
     },
     {
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 1,
-      "name": "u_alpha",
-      "rows": 1,
+      "location": 12,
+      "name": "u_circle2",
+      "rows": 2,
       "type": 10
     },
     {
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 0,
-      "name": "u_color",
-      "rows": 4,
+      "location": 13,
+      "name": "u_circle3",
+      "rows": 2,
       "type": 10
     },
     {
       "array_elements": 0,
       "bit_width": 32,
       "columns": 1,
-      "location": 2,
-      "name": "u_sparkle_color",
-      "rows": 4,
+      "location": 14,
+      "name": "u_rotation1",
+      "rows": 2,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 15,
+      "name": "u_rotation2",
+      "rows": 2,
+      "type": 10
+    },
+    {
+      "array_elements": 0,
+      "bit_width": 32,
+      "columns": 1,
+      "location": 16,
+      "name": "u_rotation3",
+      "rows": 2,
       "type": 10
     }
   ]
