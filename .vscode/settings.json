@@ -4,7 +4,9 @@
         "Checkmark",
         "datasource",
         "informations",
+        "mocktail",
         "nodoc",
+        "riverpod",
         "rxdart",
         "sqflite",
         "todoform",
@@ -19,9 +21,7 @@
         "**/*.g.dart": true,
     },
     "dart.lineLength": 150,
-    "dart.flutterTestAdditionalArgs": [
-        "lib"
-    ],
+    "dart.allowTestsOutsideTestFolder": true,
     "[dart]": {
         "editor.rulers": [
             150
