@@ -13,9 +13,9 @@ void main() {
   late ProviderContainer container;
   late TodosRepositoryImpl todosRepository;
   setUp(() {
-    final deps = buildMockedTodosRepository();
-    container = deps.item1;
-    todosRepository = deps.item2;
+    final tuple = buildMockedTodosRepository();
+    container = tuple.item1;
+    todosRepository = tuple.item2;
   });
   tearDown(() => container.dispose());
   test('DeleteCompletedTodosUseCaseImpl should start loading and then delete the todo', () async {

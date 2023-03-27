@@ -14,9 +14,9 @@ void main() {
   late ProviderContainer container;
   late TodosRepositoryImpl todosRepository;
   setUp(() {
-    final deps = buildMockedTodosRepository();
-    container = deps.item1;
-    todosRepository = deps.item2;
+    final tuple = buildMockedTodosRepository();
+    container = tuple.item1;
+    todosRepository = tuple.item2;
   });
   tearDown(() => container.dispose());
   test('CreateTodoUseCaseImpl should start loading and then create the todo and emit it', () async {
