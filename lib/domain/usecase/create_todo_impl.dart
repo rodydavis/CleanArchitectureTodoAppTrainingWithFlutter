@@ -8,8 +8,7 @@ import 'create_todo.dart';
 part 'create_todo_impl.g.dart';
 
 @riverpod
-class CreateTodoUseCaseImpl extends _$CreateTodoUseCaseImpl
-    implements CreateTodoUseCase {
+class CreateTodoUseCaseImpl extends _$CreateTodoUseCaseImpl implements CreateTodoUseCase {
   @override
   Future<Todo> build(
     String title,
@@ -17,8 +16,7 @@ class CreateTodoUseCaseImpl extends _$CreateTodoUseCaseImpl
     bool isCompleted,
     DateTime dueDate,
   ) {
-    final TodosRepository repository =
-        ref.read(todosRepositoryImplProvider.notifier);
+    final TodosRepository repository = ref.read(todosRepositoryImplProvider.notifier);
     return repository.createTodo(
       title: title,
       description: description,

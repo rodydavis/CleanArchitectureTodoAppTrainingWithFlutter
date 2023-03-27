@@ -38,3 +38,9 @@ app.*.symbols
 
 # Obfuscation related
 app.*.map.json
+
+# Fvm
+.fvm/flutter_sdk
+
+# Coverage
+lcov.info
