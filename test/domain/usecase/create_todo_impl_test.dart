@@ -7,23 +7,20 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:riverpod/riverpod.dart';
 
-class MockTodosRepositoryImpl extends AutoDisposeStreamNotifier<List<Todo>> with Mock implements TodosRepositoryImpl {}
+import '../../helpers/riverpod.dart';
+import 'shared.dart';
 
 void main() {
   late ProviderContainer container;
   late TodosRepositoryImpl todosRepository;
   setUp(() {
-    todosRepository = MockTodosRepositoryImpl();
-    container = ProviderContainer(
-      overrides: [
-        todosRepositoryImplProvider.overrideWith(() => todosRepository),
-      ],
-    );
+    final deps = buildMockedTodosRepository();
+    container = deps.item1;
+    todosRepository = deps.item2;
   });
   tearDown(() => container.dispose());
   test('CreateTodoUseCaseImpl should start loading and then create the todo and emit it', () async {
     final completer = Completer<Todo>();
-    when(todosRepository.build).thenAnswer((_) => const Stream.empty());
     when(() => todosRepository.createTodo(
           title: any(named: 'title'),
           description: any(named: 'description'),
@@ -38,8 +35,7 @@ void main() {
       true,
       DateTime(1),
     );
-    final useCase = container.read(testUseCaseProvider);
-    container.listen(testUseCaseProvider, (_, __) {}); //avoids the automatic disposal of the provider
+    final useCase = container.readAndKeepAlive(testUseCaseProvider);
     final captured = verify(() => todosRepository.createTodo(
           title: captureAny(named: 'title'),
           description: captureAny(named: 'description'),
@@ -67,7 +63,7 @@ void main() {
   });
   test('CreateTodoUseCaseImpl when the repository throws should emit the error', () async {
     final error = Exception('mocked exception');
-    when(todosRepository.build).thenAnswer((_) => const Stream.empty());
+
     when(() => todosRepository.createTodo(
           title: any(named: 'title'),
           description: any(named: 'description'),
@@ -83,8 +79,7 @@ void main() {
       DateTime(1),
     );
 
-    container.read(testUseCaseProvider);
-    container.listen(testUseCaseProvider, (_, __) {}); //avoids the automatic disposal of the provider
+    container.readAndKeepAlive(testUseCaseProvider);
     await container.pump();
     final useCase = container.read(testUseCaseProvider);
     expect(useCase.isLoading, isFalse);
